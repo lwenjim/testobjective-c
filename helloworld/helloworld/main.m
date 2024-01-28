@@ -140,7 +140,7 @@ int main(int argc, const char * argv[]) {
     // 可变Set
     // 遍历初始化函数分配大小
     NSMutableSet *mutableSet1 = [[NSMutableSet alloc] initWithCapacity:3];
-    NSMutableSet *mutableSet2 = [NSMutableSet setWithCapacity:3];
+//    NSMutableSet *mutableSet2 = [NSMutableSet setWithCapacity:3];
     
     //添加元素
     [mutableSet1 addObject:@"aaa"];
