@@ -18,6 +18,7 @@
 		38CE6F8A2B6528C10030DEBB /* first_app_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CE6F892B6528C10030DEBB /* first_app_2UITests.m */; };
 		38CE6F8C2B6528C10030DEBB /* first_app_2UITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CE6F8B2B6528C10030DEBB /* first_app_2UITestsLaunchTests.m */; };
 		38CE6F982B6533370030DEBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38CE6F6C2B6528BE0030DEBB /* Main.storyboard */; };
+		38CF857B2B6CF12200CA085F /* Computer.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CF857A2B6CF12200CA085F /* Computer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		38CE6F852B6528C10030DEBB /* first-app-2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "first-app-2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38CE6F892B6528C10030DEBB /* first_app_2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = first_app_2UITests.m; sourceTree = "<group>"; };
 		38CE6F8B2B6528C10030DEBB /* first_app_2UITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = first_app_2UITestsLaunchTests.m; sourceTree = "<group>"; };
+		38CF85792B6CF12200CA085F /* Computer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Computer.h; sourceTree = "<group>"; };
+		38CF857A2B6CF12200CA085F /* Computer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Computer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				38CE6F712B6528C10030DEBB /* LaunchScreen.storyboard */,
 				38CE6F742B6528C10030DEBB /* Info.plist */,
 				38CE6F752B6528C10030DEBB /* main.m */,
+				38CF85792B6CF12200CA085F /* Computer.h */,
+				38CF857A2B6CF12200CA085F /* Computer.m */,
 			);
 			path = "first-app-2";
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				38CE6F6B2B6528BE0030DEBB /* ViewController.m in Sources */,
 				38CE6F652B6528BE0030DEBB /* AppDelegate.m in Sources */,
 				38CE6F762B6528C10030DEBB /* main.m in Sources */,
+				38CF857B2B6CF12200CA085F /* Computer.m in Sources */,
 				38CE6F682B6528BE0030DEBB /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

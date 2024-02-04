@@ -158,7 +158,6 @@ int main(int argc, const char * argv[]) {
     NSNumber *ii =  [[NSNumber alloc] initWithInt:1];
     NSNumber *ff = [[NSNumber alloc] initWithFloat:0.1];
     NSNumber *b =  [[NSNumber alloc] initWithBool:true];
-    
     NSLog(@"%c, %d, %f, %b", c.charValue, ii.intValue, ff.floatValue, b.boolValue);
     
     
@@ -168,9 +167,8 @@ int main(int argc, const char * argv[]) {
     NSNumber *b2 =    [NSNumber numberWithBool:true];
     //    NSNull *n = (NSNull *)NULL;
     NSLog(@"%c, %d, %f, %b", c1.charValue, ii2.intValue, ff2.floatValue, b2.boolValue);
+
     // see https://www.cnblogs.com/ludashi/p/3893093.html
-    
-    
     return 0;
 }
 
