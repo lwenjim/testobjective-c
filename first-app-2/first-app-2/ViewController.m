@@ -22,7 +22,7 @@
     
     button.frame=CGRectMake(([UIScreen mainScreen].bounds.size.width-40)/2, ([UIScreen mainScreen].bounds.size.height-40)/2, 40, 40);
     button.backgroundColor=[UIColor whiteColor];
-    [button setTitle:@"提交" forState:UIControlStateNormal];
+    [button setTitle:@"点击" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(changeColor) forControlEvents:UIControlEventTouchUpInside];
     [button setBackgroundImage:[UIImage imageNamed:@"1706869120285.jpg"] forState:UIControlStateNormal];
     [self.view addSubview:button];
