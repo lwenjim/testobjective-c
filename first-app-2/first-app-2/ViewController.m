@@ -22,11 +22,12 @@
     
     button.frame=CGRectMake(([UIScreen mainScreen].bounds.size.width-40)/2, ([UIScreen mainScreen].bounds.size.height-40)/2, 40, 40);
     button.backgroundColor=[UIColor whiteColor];
-    [button setTitle:@"点我一下" forState:UIControlStateNormal];
+    [button setTitle:@"提交" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(changeColor) forControlEvents:UIControlEventTouchUpInside];
     [button setBackgroundImage:[UIImage imageNamed:@"1706869120285.jpg"] forState:UIControlStateNormal];
     [self.view addSubview:button];
 }
+
 -(void)changeColor{
     self.view.backgroundColor=[UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
 }
