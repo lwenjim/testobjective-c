@@ -24,9 +24,40 @@
     int screenWidth = [UIScreen mainScreen].bounds.size.width;
     int screenHeight = [UIScreen mainScreen].bounds.size.height;
     int textViewWidth = [UIScreen mainScreen].bounds.size.width;
-    int textViewHeight = [UIScreen mainScreen].bounds.size.height-200;
-    self.textView = [[UITextView alloc] initWithFrame:CGRectMake((screenWidth - textViewWidth)/2, (screenHeight - textViewHeight)/2, textViewWidth, textViewHeight)];
-    [self.view addSubview:self.textView];
+    int textViewHeight = [UIScreen mainScreen].bounds.size.height-160;
+    UIView* box = [[UIView alloc] initWithFrame:CGRectMake(0, 70, screenWidth,screenHeight-206)];
+    box.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:box];
+    
+    int textFieldWidth =textViewWidth;
+    int textFieldHeight = 40;
+    self.textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 1, textFieldWidth-120-5, textFieldHeight)];
+    self.textField.borderStyle = UITextBorderStyleRoundedRect;
+    self.textField.placeholder = @"请输入文字";
+    self.textField.text = @"https://www.baidu.com";
+    self.textField.textColor = [UIColor blueColor];
+    self.textField.layer.borderColor = [[UIColor colorWithRed:200.0/255 green:50/255 blue:10/255 alpha:1] CGColor];
+    self.textField.backgroundColor=[UIColor whiteColor];
+    self.textField.layer.borderWidth=2;
+    self.textField.layer.cornerRadius = 6.0f;
+    [box addSubview:self.textField];
+    
+    int buttonWidth =screenWidth - CGRectGetMaxX(self.textField.frame)-2;
+    int buttonHeight = 40;
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [box addSubview:button];
+    [button setTitle:@"获取网址内容" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(changeColor) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    button.frame=CGRectMake(CGRectGetMaxX(self.textField.frame)+2, 1, buttonWidth, buttonHeight);
+    button.backgroundColor=[UIColor whiteColor];
+    button.layer.borderWidth=2;
+    button.layer.cornerRadius = 6.0f;
+    button.layer.borderColor = [[UIColor colorWithRed:200.0/255 green:50/255 blue:10/255 alpha:1] CGColor];
+    
+    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.textField.frame)+1, textViewWidth, textViewHeight)];
+    [box addSubview:self.textView];
+    
     [self.textView scrollRangeToVisible:NSMakeRange([self.textView.text length] - 1, 1)];
     self.textView.delegate = self;
     self.textView.returnKeyType = UIReturnKeyDefault;
@@ -39,36 +70,16 @@
     self.textView.editable = NO;
     self.textView.layer.cornerRadius = 6.0f;
     self.textView.layer.borderWidth=2;
-    
     self.textView.layer.borderColor = [[UIColor colorWithRed:200.0/255 green:50/255 blue:10/255 alpha:1] CGColor];
+    self.textView.backgroundColor=[UIColor whiteColor];
     
-    _placeholderLabel  = [[UILabel alloc]initWithFrame:CGRectMake(5, 5, CGRectGetWidth(self.textView.frame), 20)];
+    _placeholderLabel  = [[UILabel alloc]initWithFrame:CGRectMake(2, CGRectGetMaxY(self.textField.frame)+4, CGRectGetWidth(self.textView.frame), 20)];
     _placeholderLabel.backgroundColor = [UIColor clearColor];
     _placeholderLabel.textColor = [UIColor grayColor];
     _placeholderLabel.text = @"请输入内容";
     _placeholderLabel.font = self.textView.font;
-    [self.textView addSubview:_placeholderLabel];
+    [box addSubview:_placeholderLabel];
     [_placeholderLabel setNumberOfLines:0];
-    
-    
-    
-   int textFieldWidth =textViewWidth;
-   int textFieldHeight = 40;
-   self.textField = [[UITextField alloc] initWithFrame:CGRectMake((screenWidth-textFieldWidth)/2, (screenHeight - textViewHeight)/2 - textFieldHeight -5, textFieldWidth, textFieldHeight)];
-   self.textField.borderStyle = UITextBorderStyleRoundedRect;
-   self.textField.placeholder = @"请输入文字";
-   self.textField.text = @"https://www.baidu.com";
-    [self.view addSubview:self.textField];
-    
-    int buttonWidth =120;
-    int buttonHeight = 40;
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.view addSubview:button];
-    [button setTitle:@"获取网址内容" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(changeColor) forControlEvents:UIControlEventTouchUpInside];
-    [button addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    button.frame=CGRectMake(([UIScreen mainScreen].bounds.size.width-buttonWidth)/2, (screenHeight - buttonHeight)/2 + (textViewHeight + buttonHeight)/2 + 5, buttonWidth, buttonHeight);
-    button.backgroundColor=[UIColor whiteColor];
 }
 -(BOOL)textField:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(nonnull NSString *)string{
     if (string.length > 0 ) {
