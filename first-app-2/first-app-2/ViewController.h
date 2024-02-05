@@ -7,8 +7,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITextViewDelegate>{
+    UILabel* _placeholderLabel;
+}
 
+@property (nonatomic, strong) UITextView * textView;
+@property (nonatomic, strong) UITextField * textField;
 
 @end
 
