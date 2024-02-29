@@ -672,6 +672,8 @@ struct DemoSwiftApp: App {
 //            var Trial3 = 120.3
 //            Trial3.square()
 //            print("圆的面积为: \(Trial3)")
+            
+            
             var a = MultipartFormData()
             return try ModelContainer(for: schema, configurations: [modelConfiguration])
         } catch {
